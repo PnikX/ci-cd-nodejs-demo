@@ -1,0 +1,26 @@
+name: Node.js CI/CD Pipeline
+
+on: [push, pull_request]  # Runs on every push or PR
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set Up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Run Tests
+      run: echo "No tests yet"  # Replace with real tests later
+
+    - name: Deploy to Server (Example)
+      run: echo "Deployment step goes here"
+
